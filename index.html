@@ -281,6 +281,13 @@
     .about-grid .book-plate { position: static; }
   }
 
+  .book-plate .cover-figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
   .book-plate .cover {
     margin: 0;
     position: relative;
@@ -756,13 +763,15 @@
 
     <div class="about-grid">
       <aside class="book-plate" aria-label="Book">
-        <figure class="cover">
-          <img
-            src="https://assets.cambridge.org/97810096/21458/large_cover/9781009621458i.jpg"
-            alt="Cover of Hegel's Inversion of Philosophy: The Metaphysics of the Made by W. Clark Wolf (Cambridge University Press, 2026)"
-            loading="lazy"
-            onerror="this.closest('.cover').classList.add('cover-fallback'); this.remove();"
-          >
+        <figure class="cover-figure">
+          <div class="cover">
+            <img
+              src="https://assets.cambridge.org/97810096/21458/large_cover/9781009621458i.jpg"
+              alt="Cover of Hegel's Inversion of Philosophy: The Metaphysics of the Made by W. Clark Wolf (Cambridge University Press, 2026)"
+              loading="lazy"
+              onerror="this.closest('.cover').classList.add('cover-fallback'); this.remove();"
+            >
+          </div>
           <figcaption class="cover-caption">
             Cover art: <em>Deconstructed Sphere</em> (2005) by Lincoln Seligman.
           </figcaption>
