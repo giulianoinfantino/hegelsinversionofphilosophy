@@ -5,9 +5,70 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hegel's Inversion of Philosophy — An Author-Meets-Critics Workshop</title>
 <meta name="description" content="An Author-Meets-Critics workshop on W. Clark Wolf's Hegel's Inversion of Philosophy. 4 July 2026, Hegel-Haus Stuttgart.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hegel's Inversion of Philosophy — An Author-Meets-Critics Workshop">
+<meta property="og:description" content="A day of close reading and open discussion around W. Clark Wolf's new book, hosted at the house where Hegel was born. 4 July 2026, Hegel-Haus Stuttgart.">
+<meta property="og:image" content="https://assets.cambridge.org/97810096/21458/large_cover/9781009621458i.jpg">
+<meta property="og:locale" content="en_GB">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hegel's Inversion of Philosophy — An Author-Meets-Critics Workshop">
+<meta name="twitter:description" content="A day of close reading and open discussion around W. Clark Wolf's new book, hosted at the house where Hegel was born. 4 July 2026, Hegel-Haus Stuttgart.">
+<meta name="twitter:image" content="https://assets.cambridge.org/97810096/21458/large_cover/9781009621458i.jpg">
+
+<!-- Structured data: schema.org/Event -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Hegel's Inversion of Philosophy — An Author-Meets-Critics Workshop",
+  "description": "A day of close reading and open discussion around W. Clark Wolf's Hegel's Inversion of Philosophy (Cambridge University Press, 2026), hosted at the house where Hegel was born.",
+  "startDate": "2026-07-04T09:30:00+02:00",
+  "endDate": "2026-07-04T17:35:00+02:00",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "location": {
+    "@type": "Place",
+    "name": "Hegel-Haus Stuttgart",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Eberhardstraße 53",
+      "postalCode": "70173",
+      "addressLocality": "Stuttgart",
+      "addressCountry": "DE"
+    }
+  },
+  "organizer": [
+    { "@type": "Person", "name": "Giuliano Infantino", "affiliation": "University of Stuttgart", "email": "giuliano.infantino@philo.uni-stuttgart.de" },
+    { "@type": "Person", "name": "Ana Vieyra", "affiliation": "University of Stuttgart", "email": "ana.vieyra@philo.uni-stuttgart.de" }
+  ],
+  "performer": [
+    { "@type": "Person", "name": "W. Clark Wolf", "affiliation": "St. John's College, Annapolis" },
+    { "@type": "Person", "name": "James Kreines", "affiliation": "Claremont McKenna College" },
+    { "@type": "Person", "name": "Andrew Werner", "affiliation": "University of Houston" },
+    { "@type": "Person", "name": "Robb Dunphy", "affiliation": "University of Sussex" },
+    { "@type": "Person", "name": "Daniel LeBlanc", "affiliation": "Yale University" },
+    { "@type": "Person", "name": "Giuliano Infantino", "affiliation": "University of Stuttgart" },
+    { "@type": "Person", "name": "Ana Vieyra", "affiliation": "University of Stuttgart" }
+  ],
+  "about": {
+    "@type": "Book",
+    "name": "Hegel's Inversion of Philosophy: The Metaphysics of the Made",
+    "author": { "@type": "Person", "name": "W. Clark Wolf" },
+    "isbn": "978-1-009-62145-8",
+    "publisher": "Cambridge University Press"
+  }
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Cormorant+Infant:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --ink:        #1a1612;
@@ -18,7 +79,7 @@
     --accent:     #7a1e1e;     /* oxblood */
     --accent-soft:#a84a3a;
     --muted:      #6b5f50;
-    --serif-display: 'Cormorant Garamond', 'Cormorant Infant', Georgia, serif;
+    --serif-display: 'Cormorant Garamond', Georgia, serif;
     --serif-body:    'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     --mono:          'JetBrains Mono', ui-monospace, monospace;
   }
@@ -119,6 +180,7 @@
     letter-spacing: -0.02em;
     margin-bottom: 2.5rem;
     max-width: 15ch;
+    text-wrap: balance;
   }
   .hero h1 em {
     font-style: italic;
@@ -138,7 +200,7 @@
 
   .hero .facts {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 2rem;
     padding: 2rem 0;
     border-top: 1px solid var(--rule);
@@ -158,6 +220,7 @@
     font-size: 1.25rem;
     color: var(--ink);
     line-height: 1.25;
+    text-wrap: balance;
   }
 
   /* Decorative side mark */
@@ -208,7 +271,8 @@
     font-size: clamp(2rem, 4.5vw, 3.4rem);
     line-height: 1.05;
     letter-spacing: -0.01em;
-    max-width: 22ch;
+    max-width: 32ch;
+    text-wrap: balance;
   }
   .section-head h2 em { font-style: italic; color: var(--accent); font-weight: 300; }
 
@@ -476,6 +540,17 @@
     font-size: 1rem;
     color: var(--muted);
   }
+  .speaker .role {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 1rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--rule);
+  }
   .speaker.author {
     background: var(--ink);
     color: var(--paper);
@@ -517,7 +592,7 @@
     padding: 1.8rem;
     background: var(--paper-deep);
   }
-  .venue-card h4 {
+  .venue-card h3 {
     font-family: var(--serif-display);
     font-size: 1.4rem;
     margin-bottom: 1rem;
@@ -618,6 +693,25 @@
     color: var(--muted);
   }
 
+  /* ---------- Accessibility: focus states & contrast ---------- */
+
+  :focus { outline: none; }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+  .book-plate .cover:focus-visible,
+  .speaker:focus-visible {
+    outline-offset: 4px;
+  }
+
+  /* Tighten affiliation & interstitial contrast */
+  .speaker .affiliation { color: var(--ink-soft); }
+  .slot.interstitial { opacity: 1; }
+  .slot.interstitial .what { color: var(--muted); }
+  .slot.interstitial .time { color: var(--muted); }
+
   /* ---------- Page-load reveal ---------- */
 
   .reveal {
@@ -659,7 +753,7 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero">
-    <div class="sidemark">Author · Meets · Critics</div>
+    <div class="sidemark" aria-hidden="true">Author · Meets · Critics</div>
 
     <div class="eyebrow reveal reveal-1">A Workshop · 4 July 2026</div>
 
@@ -690,7 +784,7 @@
       </div>
       <div>
         <dt>Organisers</dt>
-        <dd>G. Infantino &amp; A. Vieyra<br><span style="font-family: var(--serif-body); font-style: italic; font-size: 1rem; color: var(--muted);">Universität Stuttgart</span></dd>
+        <dd><span style="white-space: nowrap;">G. Infantino</span> &amp; <span style="white-space: nowrap;">A. Vieyra</span><br><span style="font-family: var(--serif-body); font-style: italic; font-size: 1rem; color: var(--muted);">Universität Stuttgart</span></dd>
       </div>
     </dl>
   </section>
@@ -734,12 +828,6 @@
           penetrating treatment of substance and the structures of inference, and
           extends its reading across the political philosophy, the philosophy of
           nature, and the aesthetics.
-        </p>
-
-        <p class="pullquote">
-          A Hegel whose core concerns diverge sharply from those of the tradition —
-          a Hegel who puts the human, made world front and center.
-          <span class="cite">— Sebastian Rand</span>
         </p>
 
         <p>
@@ -868,31 +956,37 @@
         <span class="num">i.</span>
         <div class="name">James Kreines</div>
         <div class="affiliation">Claremont McKenna College</div>
+        <div class="role">Respondent</div>
       </div>
       <div class="speaker">
         <span class="num">ii.</span>
         <div class="name">Andrew Werner</div>
         <div class="affiliation">University of Houston</div>
+        <div class="role">Respondent</div>
       </div>
       <div class="speaker">
         <span class="num">iii.</span>
-        <div class="name">Rob Dunphy</div>
+        <div class="name">Robb Dunphy</div>
         <div class="affiliation">University of Sussex</div>
+        <div class="role">Respondent</div>
       </div>
       <div class="speaker">
         <span class="num">iv.</span>
         <div class="name">Daniel LeBlanc</div>
         <div class="affiliation">Yale University</div>
+        <div class="role">Respondent</div>
       </div>
       <div class="speaker">
         <span class="num">v.</span>
         <div class="name">Giuliano Infantino</div>
         <div class="affiliation">University of Stuttgart</div>
+        <div class="role">Respondent &amp; Organiser</div>
       </div>
       <div class="speaker">
         <span class="num">vi.</span>
         <div class="name">Ana Vieyra</div>
         <div class="affiliation">University of Stuttgart</div>
+        <div class="role">Respondent &amp; Organiser</div>
       </div>
     </div>
   </section>
@@ -915,13 +1009,13 @@
         </p>
         <p>
           The building is about ten minutes on foot from Stuttgart Hauptbahnhof.
-          Attendance at the workshop is open; seating is limited by the dimensions
-          of the room.
+          The workshop is open to all and conducted in English; no registration
+          is required, though seating is limited by the dimensions of the room.
         </p>
       </div>
 
       <div class="venue-card">
-        <h4>Hegel-Haus</h4>
+        <h3>Hegel-Haus</h3>
         <address>
           Eberhardstraße 53<br>
           70173 Stuttgart<br>
