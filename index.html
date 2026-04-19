@@ -96,7 +96,6 @@
     line-height: 1.55;
     font-weight: 400;
     overflow-x: hidden;
-    /* subtle paper texture via layered gradients */
     background-image:
       radial-gradient(circle at 20% 10%, rgba(122,30,30,0.025) 0%, transparent 40%),
       radial-gradient(circle at 80% 70%, rgba(26,22,18,0.025) 0%, transparent 40%);
@@ -104,15 +103,11 @@
 
   ::selection { background: var(--accent); color: var(--paper); }
 
-  /* ---------- Layout shell ---------- */
-
   .shell {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 clamp(1.5rem, 5vw, 5rem);
   }
-
-  /* ---------- Top bar ---------- */
 
   header.topbar {
     display: flex;
@@ -136,18 +131,13 @@
     color: var(--ink);
   }
 
-  header.topbar nav {
-    display: flex;
-    gap: 2rem;
-  }
+  header.topbar nav { display: flex; gap: 2rem; }
   header.topbar nav a {
     color: var(--muted);
     text-decoration: none;
     transition: color 0.2s;
   }
   header.topbar nav a:hover { color: var(--accent); }
-
-  /* ---------- Hero ---------- */
 
   .hero {
     padding: clamp(3rem, 9vw, 7rem) 0 clamp(3rem, 7vw, 5rem);
@@ -223,7 +213,6 @@
     text-wrap: balance;
   }
 
-  /* Decorative side mark */
   .hero .sidemark {
     position: absolute;
     right: clamp(1rem, 4vw, 3rem);
@@ -239,8 +228,6 @@
     opacity: 0.6;
   }
   @media (max-width: 900px) { .hero .sidemark { display: none; } }
-
-  /* ---------- Section primitives ---------- */
 
   section {
     padding: clamp(3rem, 8vw, 6rem) 0;
@@ -275,8 +262,6 @@
     text-wrap: balance;
   }
   .section-head h2 em { font-style: italic; color: var(--accent); font-weight: 300; }
-
-  /* ---------- About / Book section ---------- */
 
   .about-grid {
     display: grid;
@@ -317,7 +302,6 @@
       0 28px 50px -20px rgba(26,22,18,0.45),
       0 4px 10px -3px rgba(26,22,18,0.25);
   }
-  /* spine hint */
   .book-plate .cover::after {
     content: '';
     position: absolute;
@@ -334,7 +318,6 @@
     object-fit: cover;
   }
 
-  /* Fallback state if the image fails to load */
   .book-plate .cover.cover-fallback {
     background: linear-gradient(180deg, #eee4d1, #e1d3b6);
   }
@@ -365,7 +348,6 @@
   }
   .book-plate .cover-caption em { font-style: italic; }
 
-  /* Book metadata under the cover */
   .book-plate .bookmeta {
     font-family: var(--mono);
     font-size: 0.68rem;
@@ -403,15 +385,6 @@
     max-width: 62ch;
     color: var(--ink-soft);
   }
-  .about-grid .prose p:first-child::first-letter {
-    font-family: var(--serif-display);
-    font-size: 4.5rem;
-    float: left;
-    line-height: 0.85;
-    padding: 0.4rem 0.7rem 0 0;
-    color: var(--accent);
-    font-weight: 400;
-  }
 
   .about-grid .prose .pullquote {
     font-family: var(--serif-display);
@@ -435,8 +408,6 @@
     text-transform: uppercase;
     color: var(--muted);
   }
-
-  /* ---------- Schedule ---------- */
 
   .schedule {
     display: grid;
@@ -474,9 +445,7 @@
   }
   .slot .what em { font-style: italic; font-weight: 300; }
 
-  .slot.interstitial {
-    opacity: 0.55;
-  }
+  .slot.interstitial { opacity: 0.55; }
   .slot.interstitial .what {
     font-style: italic;
     font-size: 1.05rem;
@@ -498,8 +467,6 @@
     .slot { grid-template-columns: 80px 1fr; gap: 1rem; }
     .slot .tag { grid-column: 2; font-size: 0.62rem; }
   }
-
-  /* ---------- Speakers ---------- */
 
   .speakers {
     display: grid;
@@ -570,8 +537,6 @@
     border-top: 1px solid rgba(244,239,230,0.2);
   }
 
-  /* ---------- Venue ---------- */
-
   .venue-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -617,8 +582,6 @@
     transition: color 0.2s, border-color 0.2s;
   }
   .venue-card a:hover { color: var(--ink); border-color: var(--ink); }
-
-  /* ---------- Contact / footer ---------- */
 
   .contact {
     padding: clamp(4rem, 9vw, 7rem) 0;
@@ -693,8 +656,6 @@
     color: var(--muted);
   }
 
-  /* ---------- Accessibility: focus states & contrast ---------- */
-
   :focus { outline: none; }
   :focus-visible {
     outline: 2px solid var(--accent);
@@ -706,13 +667,10 @@
     outline-offset: 4px;
   }
 
-  /* Tighten affiliation & interstitial contrast */
   .speaker .affiliation { color: var(--ink-soft); }
   .slot.interstitial { opacity: 1; }
   .slot.interstitial .what { color: var(--muted); }
   .slot.interstitial .time { color: var(--muted); }
-
-  /* ---------- Page-load reveal ---------- */
 
   .reveal {
     opacity: 0;
@@ -819,24 +777,43 @@
 
       <div class="prose">
         <p>
-          W. Clark Wolf's <em>Hegel's Inversion of Philosophy</em> offers a sharp
-          rereading of the <em>Science of Logic</em> and the broader Hegelian
-          project. At its center stands what Wolf calls the <em>artifactual
-          paradigm</em>: the claim that, for Hegel, the human, made world is not
-          merely different in kind from the given world of nature but
-          philosophically more fundamental. From this thesis the book develops a
-          penetrating treatment of substance and the structures of inference, and
-          extends its reading across the political philosophy, the philosophy of
-          nature, and the aesthetics.
+          The philosophical tradition tends to take <em>nature</em> as the measure of
+          the real: what is objectively knowable is what is mind-independent, and
+          the humanly made — language, law, institutions, art — is demoted to the
+          margins of serious metaphysics. Wolf argues that Hegel's mature project
+          is an <em>inversion</em> of exactly this ordering. In the <em>Science of
+          Logic</em>, and more specifically in the Doctrine of the Concept, Hegel
+          works out the metaphysical basis for a philosophy in which the paradigm
+          of knowledge is not the mind's grasp of a given nature, but thought's
+          knowledge of its own products. Geist, not nature, sets the standard.
         </p>
 
         <p>
-          This workshop brings together six critics of the manuscript — working in
-          Germany, the UK, and the United States — to press the book's central
-          claims, to explore their consequences for contemporary debates in German
-          Idealism, and to open the discussion to the broader philosophical
-          questions Wolf's artifactual paradigm raises. Each session pairs a short
-          intervention with an extended, collective conversation.
+          Wolf calls this the <em>artifactual paradigm</em>. Its closest precedent
+          is Vico's <em>verum-factum</em> — we know what we have made — but where
+          Vico turned that principle against the natural sciences in the name of
+          cultural and historical knowledge, Hegel gives it a strictly logical
+          argument. The book traces that argument through the Concept Logic —
+          teleology, life, cognition — and then asks what follows for the system
+          as a whole: what it means for political philosophy, for the philosophy
+          of nature, and for aesthetics, once the humanly made is treated as
+          philosophically fundamental rather than derivative.
+        </p>
+
+        <p class="pullquote">
+          A Hegel whose core concerns diverge sharply from those of the tradition —
+          a Hegel who puts the human, made world front and center.
+          <span class="cite">— Sebastian Rand, Georgia State University</span>
+        </p>
+
+        <p>
+          The workshop takes up the book's central claims on several fronts:
+          the status of Hegel's <em>Logic</em> as a replacement of metaphysics
+          rather than another metaphysical theory; the reach and limits of the
+          artifactual paradigm across Hegel's system; and its bearing on
+          contemporary debates in German Idealism and the philosophy of concepts.
+          Each session pairs a short intervention with an extended, open
+          discussion.
         </p>
       </div>
     </div>
