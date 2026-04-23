@@ -7,24 +7,28 @@
 <meta name="description" content="An Author-Meets-Critics workshop on W. Clark Wolf's Hegel's Inversion of Philosophy. 4 July 2026, Hegel-Haus Stuttgart.">
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://hegelsinversionofphilosophy.com/">
-<meta property="og:title" content="Hegel's Inversion of Philosophy — Workshop">
-<meta property="og:description" content="A day of discussion around W. Clark Wolf's new book at the Hegel-Haus Stuttgart. 4 July 2026.">
-<meta property="og:image" content="cover.jpg">
+<meta property="og:title" content="Hegel's Inversion of Philosophy — An Author-Meets-Critics Workshop">
+<meta property="og:description" content="A day of close reading and open discussion around W. Clark Wolf's new book, hosted at the house where Hegel was born. 4 July 2026, Hegel-Haus Stuttgart.">
+<meta property="og:image" content="https://assets.cambridge.org/97810096/21458/large_cover/9781009621458i.jpg">
+<meta property="og:locale" content="en_GB">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Hegel's Inversion of Philosophy — Workshop">
-<meta name="twitter:image" content="cover.jpg">
+<meta name="twitter:title" content="Hegel's Inversion of Philosophy — An Author-Meets-Critics Workshop">
+<meta name="twitter:description" content="A day of close reading and open discussion around W. Clark Wolf's new book, hosted at the house where Hegel was born. 4 July 2026, Hegel-Haus Stuttgart.">
+<meta name="twitter:image" content="https://assets.cambridge.org/97810096/21458/large_cover/9781009621458i.jpg">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Event",
   "name": "Hegel's Inversion of Philosophy — An Author-Meets-Critics Workshop",
+  "description": "A day of close reading and open discussion around W. Clark Wolf's Hegel's Inversion of Philosophy (Cambridge University Press, 2026), hosted at the house where Hegel was born.",
   "startDate": "2026-07-04T09:30:00+02:00",
   "endDate": "2026-07-04T17:35:00+02:00",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
   "eventStatus": "https://schema.org/EventScheduled",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
   "location": {
     "@type": "Place",
     "name": "Hegel-Haus Stuttgart",
@@ -37,16 +41,31 @@
     }
   },
   "organizer": [
-    { "@type": "Person", "name": "Giuliano Infantino" },
-    { "@type": "Person", "name": "Ana Vieyra" }
-  ]
+    { "@type": "Person", "name": "Giuliano Infantino", "affiliation": "University of Stuttgart", "email": "giuliano.infantino@philo.uni-stuttgart.de" },
+    { "@type": "Person", "name": "Ana Vieyra", "affiliation": "University of Stuttgart", "email": "ana.vieyra@philo.uni-stuttgart.de" }
+  ],
+  "performer": [
+    { "@type": "Person", "name": "W. Clark Wolf", "affiliation": "St. John's College, Annapolis" },
+    { "@type": "Person", "name": "James Kreines", "affiliation": "Claremont McKenna College" },
+    { "@type": "Person", "name": "Andrew Werner", "affiliation": "University of Houston" },
+    { "@type": "Person", "name": "Robb Dunphy", "affiliation": "University of Sussex" },
+    { "@type": "Person", "name": "Daniel LeBlanc", "affiliation": "Yale University" },
+    { "@type": "Person", "name": "Giuliano Infantino", "affiliation": "University of Stuttgart" },
+    { "@type": "Person", "name": "Ana Vieyra", "affiliation": "University of Stuttgart" }
+  ],
+  "about": {
+    "@type": "Book",
+    "name": "Hegel's Inversion of Philosophy: The Metaphysics of the Made",
+    "author": { "@type": "Person", "name": "W. Clark Wolf" },
+    "isbn": "978-1-009-62145-8",
+    "publisher": "Cambridge University Press"
+  }
 }
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-
 <style>
   :root {
     --ink:        #1a1612;
@@ -54,7 +73,7 @@
     --paper:      #f4efe6;
     --paper-deep: #ebe3d4;
     --rule:       #b8a88e;
-    --accent:     #7a1e1e;
+    --accent:     #7a1e1e;     /* oxblood */
     --accent-soft:#a84a3a;
     --muted:      #6b5f50;
     --serif-display: 'Cormorant Garamond', Georgia, serif;
@@ -63,6 +82,7 @@
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
+
   html { scroll-behavior: smooth; }
 
   body {
@@ -71,12 +91,20 @@
     font-family: var(--serif-body);
     font-size: 20px;
     line-height: 1.55;
+    font-weight: 400;
+    overflow-x: hidden;
     background-image:
       radial-gradient(circle at 20% 10%, rgba(122,30,30,0.025) 0%, transparent 40%),
       radial-gradient(circle at 80% 70%, rgba(26,22,18,0.025) 0%, transparent 40%);
   }
 
-  .shell { max-width: 1400px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 5rem); }
+  ::selection { background: var(--accent); color: var(--paper); }
+
+  .shell {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 5vw, 5rem);
+  }
 
   header.topbar {
     display: flex;
@@ -88,94 +116,634 @@
     font-size: 0.72rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
+    color: var(--muted);
   }
 
-  header.topbar .mark { font-family: var(--serif-display); font-style: italic; font-size: 1.1rem; color: var(--ink); text-transform: none; letter-spacing: 0; }
+  header.topbar .mark {
+    font-family: var(--serif-display);
+    font-style: italic;
+    font-size: 1.1rem;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--ink);
+  }
+
   header.topbar nav { display: flex; gap: 2rem; }
-  header.topbar nav a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  header.topbar nav a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
   header.topbar nav a:hover { color: var(--accent); }
 
-  .hero { padding: clamp(3rem, 9vw, 7rem) 0; position: relative; }
-  .hero .eyebrow { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.8rem; }
-  .hero .eyebrow::before { content: ''; width: 2rem; height: 1px; background: var(--accent); }
-  .hero h1 { font-family: var(--serif-display); font-size: clamp(3rem, 9vw, 7.2rem); line-height: 0.95; letter-spacing: -0.02em; margin-bottom: 2.5rem; }
-  .hero h1 em { font-style: italic; color: var(--accent); font-weight: 300; }
-  
-  .hero .lede { font-size: clamp(1.15rem, 1.8vw, 1.4rem); max-width: 48ch; font-style: italic; margin-bottom: 3rem; }
+  .hero {
+    padding: clamp(3rem, 9vw, 7rem) 0 clamp(3rem, 7vw, 5rem);
+    position: relative;
+  }
 
-  .hero .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; padding: 2rem 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
-  .hero .facts dt { font-family: var(--mono); font-size: 0.68rem; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; letter-spacing: 0.18em; }
-  .hero .facts dd { font-family: var(--serif-display); font-size: 1.25rem; }
+  .hero .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .hero .eyebrow::before {
+    content: '';
+    width: 2rem;
+    height: 1px;
+    background: var(--accent);
+  }
 
-  section { padding: clamp(3rem, 8vw, 6rem) 0; border-top: 1px solid var(--rule); }
-  .section-head { display: grid; grid-template-columns: 1fr 3fr; gap: 2rem; margin-bottom: 3.5rem; align-items: baseline; }
-  .section-head .label { font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; color: var(--accent); letter-spacing: 0.22em; }
-  .section-head h2 { font-family: var(--serif-display); font-size: clamp(2rem, 4.5vw, 3.4rem); font-weight: 400; }
+  .hero h1 {
+    font-family: var(--serif-display);
+    font-weight: 400;
+    font-size: clamp(3rem, 9vw, 7.2rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin-bottom: 2.5rem;
+    max-width: 15ch;
+    text-wrap: balance;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 300;
+  }
 
-  .about-grid { display: grid; grid-template-columns: 1fr 3fr; gap: clamp(2rem, 5vw, 4rem); }
-  .book-plate .cover { width: 100%; aspect-ratio: 2/3; box-shadow: 0 18px 40px -18px rgba(0,0,0,0.4); border: 1px solid rgba(0,0,0,0.1); margin-bottom: 1.5rem; }
-  .book-plate .cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .bookmeta { font-family: var(--mono); font-size: 0.68rem; display: grid; grid-template-columns: auto 1fr; gap: 0.5rem 1rem; text-transform: uppercase; color: var(--muted); }
-  .bookmeta dd { color: var(--ink); font-family: var(--serif-body); text-transform: none; }
+  .hero .lede {
+    font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+    max-width: 48ch;
+    color: var(--ink-soft);
+    font-style: italic;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    line-height: 1.5;
+  }
 
-  .schedule { max-width: 960px; margin: 0 auto; }
-  .slot { display: grid; grid-template-columns: 140px 1fr auto; gap: 2rem; padding: 1.3rem 0; border-bottom: 1px solid var(--rule); align-items: baseline; }
-  .slot.opener { background: rgba(122,30,30,0.04); padding: 1.6rem 1rem; margin: 0 -1rem; border-bottom: none; }
-  .slot .time { font-family: var(--mono); font-size: 0.9rem; color: var(--accent); font-weight: 500; }
-  .slot .what { font-family: var(--serif-display); font-size: 1.3rem; }
-  .slot .tag { font-family: var(--mono); font-size: 0.68rem; color: var(--muted); text-transform: uppercase; }
+  .hero .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    max-width: 820px;
+  }
+  .hero .facts dt {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+  .hero .facts dd {
+    font-family: var(--serif-display);
+    font-size: 1.25rem;
+    color: var(--ink);
+    line-height: 1.25;
+    text-wrap: balance;
+  }
 
-  .speakers { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); }
-  .speaker { padding: 2.5rem 2rem; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); transition: background 0.2s; }
+  .hero .sidemark {
+    position: absolute;
+    right: clamp(1rem, 4vw, 3rem);
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    transform-origin: center;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+    opacity: 0.6;
+  }
+  @media (max-width: 900px) { .hero .sidemark { display: none; } }
+
+  section {
+    padding: clamp(3rem, 8vw, 6rem) 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .section-head {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: clamp(1.5rem, 4vw, 4rem);
+    margin-bottom: 3.5rem;
+    align-items: baseline;
+  }
+  @media (max-width: 720px) {
+    .section-head { grid-template-columns: 1fr; gap: 1rem; }
+  }
+
+  .section-head .label {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .section-head h2 {
+    font-family: var(--serif-display);
+    font-weight: 400;
+    font-size: clamp(2rem, 4.5vw, 3.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    max-width: 32ch;
+    text-wrap: balance;
+  }
+  .section-head h2 em { font-style: italic; color: var(--accent); font-weight: 300; }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: clamp(1.5rem, 4vw, 4rem);
+  }
+  @media (max-width: 720px) { .about-grid { grid-template-columns: 1fr; } }
+
+  .about-grid .book-plate {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: sticky;
+    top: 2rem;
+  }
+  @media (max-width: 720px) {
+    .about-grid .book-plate { position: static; }
+  }
+
+  .book-plate .cover-figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .book-plate .cover {
+    margin: 0;
+    position: relative;
+    aspect-ratio: 2 / 3;
+    background: var(--paper-deep);
+    overflow: hidden;
+    box-shadow:
+      0 1px 0 rgba(26,22,18,0.08) inset,
+      0 18px 40px -18px rgba(26,22,18,0.4),
+      0 3px 8px -3px rgba(26,22,18,0.22);
+    border: 1px solid rgba(26,22,18,0.12);
+    transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1),
+                box-shadow 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .book-plate .cover:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 1px 0 rgba(26,22,18,0.08) inset,
+      0 28px 50px -20px rgba(26,22,18,0.45),
+      0 4px 10px -3px rgba(26,22,18,0.25);
+  }
+  .book-plate .cover::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 6px;
+    background: linear-gradient(90deg, rgba(26,22,18,0.22), transparent);
+    pointer-events: none;
+    z-index: 2;
+  }
+  .book-plate .cover img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .book-plate .cover.cover-fallback {
+    background: linear-gradient(180deg, #eee4d1, #e1d3b6);
+  }
+  .book-plate .cover.cover-fallback::before {
+    content: 'Hegel\'s Inversion of Philosophy · W. Clark Wolf';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    font-family: var(--serif-display);
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.3;
+    color: var(--ink-soft);
+  }
+
+  .book-plate .cover-caption {
+    margin: 0.3rem 0 0;
+    font-family: var(--serif-body);
+    font-style: italic;
+    font-size: 0.82rem;
+    line-height: 1.4;
+    color: var(--muted);
+    text-align: left;
+  }
+  .book-plate .cover-caption em { font-style: italic; }
+
+  .book-plate .bookmeta {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    line-height: 1.5;
+    color: var(--muted);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.55rem 1rem;
+    text-transform: uppercase;
+    padding-top: 1rem;
+    border-top: 1px solid var(--rule);
+  }
+  .book-plate .bookmeta dt {
+    color: var(--muted);
+    padding-top: 0.15rem;
+  }
+  .book-plate .bookmeta dd {
+    color: var(--ink);
+    font-family: var(--serif-body);
+    font-size: 0.95rem;
+    letter-spacing: 0;
+    text-transform: none;
+    line-height: 1.35;
+  }
+  .book-plate .bookmeta dd span {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 0.88rem;
+  }
+
+  .about-grid .prose p {
+    font-size: 1.15rem;
+    margin-bottom: 1.3rem;
+    max-width: 62ch;
+    color: var(--ink-soft);
+  }
+
+  .about-grid .prose .pullquote {
+    font-family: var(--serif-display);
+    font-style: italic;
+    font-size: 1.5rem;
+    line-height: 1.35;
+    color: var(--ink);
+    border-left: 2px solid var(--accent);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    max-width: 45ch;
+    font-weight: 300;
+  }
+  .about-grid .prose .pullquote .cite {
+    display: block;
+    margin-top: 0.9rem;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .schedule {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .slot {
+    display: grid;
+    grid-template-columns: 140px 1fr auto;
+    gap: 2rem;
+    padding: 1.3rem 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: baseline;
+    transition: background 0.2s;
+  }
+  .slot:hover { background: rgba(122,30,30,0.03); }
+  .slot:last-child { border-bottom: none; }
+
+  .slot .time {
+    font-family: var(--mono);
+    font-size: 0.9rem;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+    font-weight: 500;
+  }
+
+  .slot .what {
+    font-family: var(--serif-display);
+    font-size: 1.3rem;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .slot .what em { font-style: italic; font-weight: 300; }
+
+  .slot.interstitial { opacity: 0.55; }
+  .slot.interstitial .what {
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--muted);
+  }
+
+  .slot .tag {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .slot.opener { background: rgba(122,30,30,0.04); padding: 1.6rem 1.2rem; margin: 0 -1.2rem; }
+  .slot.opener .what { font-weight: 500; }
+
+  @media (max-width: 640px) {
+    .slot { grid-template-columns: 80px 1fr; gap: 1rem; }
+    .slot .tag { grid-column: 2; font-size: 0.62rem; }
+  }
+
+  .speakers {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 0;
+    border-top: 1px solid var(--rule);
+    border-left: 1px solid var(--rule);
+  }
+  .speaker {
+    padding: 2rem 1.8rem;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    background: transparent;
+    transition: background 0.25s;
+    position: relative;
+  }
   .speaker:hover { background: var(--paper-deep); }
-  .speaker .name { font-family: var(--serif-display); font-size: 1.8rem; line-height: 1.1; margin-bottom: 0.5rem; }
-  .speaker .affiliation { font-style: italic; color: var(--muted); font-size: 1rem; }
-  .speaker.author { background: var(--ink); color: var(--paper); }
+
+  .speaker .num {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+  .speaker .name {
+    font-family: var(--serif-display);
+    font-size: 1.75rem;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+    font-weight: 400;
+  }
+  .speaker .affiliation {
+    font-family: var(--serif-body);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--muted);
+  }
+  .speaker .role {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 1rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--rule);
+  }
+  .speaker.author {
+    background: var(--ink);
+    color: var(--paper);
+  }
   .speaker.author .name { color: var(--paper); }
+  .speaker.author .affiliation { color: var(--paper-deep); }
+  .speaker.author .num { color: var(--accent-soft); }
+  .speaker.author .role {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    margin-top: 1rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid rgba(244,239,230,0.2);
+  }
 
-  .venue-card { border: 1px solid var(--rule); padding: 2rem; background: var(--paper-deep); }
-  .venue-card h3 { font-family: var(--serif-display); font-size: 1.5rem; margin-bottom: 1rem; }
-  .venue-card address { font-style: normal; line-height: 1.6; margin-bottom: 1.5rem; }
-  .venue-card a { font-family: var(--mono); font-size: 0.75rem; text-transform: uppercase; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
+  .venue-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+  @media (max-width: 720px) { .venue-grid { grid-template-columns: 1fr; } }
 
-  .contact { text-align: center; padding: 5rem 0; }
-  .contact a.mail { font-family: var(--serif-display); font-size: clamp(1.4rem, 2.5vw, 1.9rem); color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
+  .venue-grid .description p {
+    font-size: 1.15rem;
+    margin-bottom: 1.2rem;
+    color: var(--ink-soft);
+    max-width: 55ch;
+  }
 
-  footer { padding: 3rem 0; border-top: 1px solid var(--rule); text-align: center; font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; color: var(--muted); display: flex; flex-direction: column; gap: 1rem; }
-  .legal-links { display: flex; justify-content: center; gap: 2rem; }
-  .legal-links a { color: var(--muted); text-decoration: none; }
-  .legal-links a:hover { color: var(--accent); }
+  .venue-card {
+    border: 1px solid var(--rule);
+    padding: 1.8rem;
+    background: var(--paper-deep);
+  }
+  .venue-card h3 {
+    font-family: var(--serif-display);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+  .venue-card address {
+    font-style: normal;
+    line-height: 1.7;
+    font-size: 1rem;
+    color: var(--ink-soft);
+    margin-bottom: 1.5rem;
+  }
+  .venue-card a {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .venue-card a:hover { color: var(--ink); border-color: var(--ink); }
 
-  #impressum { display: none; padding: 3rem 0; font-size: 0.9rem; border-top: 1px solid var(--rule); color: var(--muted); }
+  .contact {
+    padding: clamp(4rem, 9vw, 7rem) 0;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+  }
+  .contact p {
+    font-family: var(--serif-display);
+    font-style: italic;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    line-height: 1.35;
+    max-width: 30ch;
+    margin: 0 auto 2rem;
+    font-weight: 300;
+    color: var(--ink-soft);
+  }
+  .contact a.mail {
+    font-family: var(--serif-display);
+    font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 3px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .contact a.mail:hover { color: var(--ink); border-color: var(--ink); }
+
+  .contact .organisers {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: clamp(1.5rem, 4vw, 3rem);
+    max-width: 820px;
+    margin: 0 auto;
+  }
+  .contact .organisers .org {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .contact .organisers .org-name {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .contact .organisers .org-sep {
+    font-family: var(--serif-display);
+    font-style: italic;
+    font-size: 1.6rem;
+    color: var(--rule);
+  }
+  @media (max-width: 560px) {
+    .contact .organisers { flex-direction: column; gap: 2rem; }
+    .contact .organisers .org-sep { display: none; }
+  }
+
+  footer {
+    padding: 2.5rem 0;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* Added Impressum Style */
+  .impressum-link { color: var(--muted); text-decoration: none; }
+  .impressum-link:hover { color: var(--accent); }
+  #impressum { display: none; padding: 2rem 0; border-top: 1px solid var(--rule); font-size: 0.8rem; line-height: 1.6; }
   #impressum:target { display: block; }
 
-  @media (max-width: 720px) {
-    .section-head, .about-grid, .slot { grid-template-columns: 1fr; gap: 1rem; }
-    .slot .tag { order: -1; }
+  :focus { outline: none; }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 1px;
   }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: rise 0.9s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  }
+  .reveal-1 { animation-delay: 0.1s; }
+  .reveal-2 { animation-delay: 0.25s; }
+  .reveal-3 { animation-delay: 0.4s; }
+  .reveal-4 { animation-delay: 0.55s; }
+  .reveal-5 { animation-delay: 0.7s; }
+
+  @keyframes rise {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { animation: none; opacity: 1; transform: none; }
+    html { scroll-behavior: auto; }
+  }
+
 </style>
 </head>
 <body>
 
 <div class="shell">
+
   <header class="topbar">
     <span class="mark">Hegel-Haus · Stuttgart</span>
     <nav>
       <a href="#about">Book</a>
       <a href="#schedule">Schedule</a>
       <a href="#speakers">Speakers</a>
+      <a href="#venue">Venue</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <section class="hero">
-    <div class="eyebrow">A Workshop · 4 July 2026</div>
-    <h1>Hegel's <em>Inversion</em> of Philosophy</h1>
-    <p class="lede">A day of close reading and discussion around W. Clark Wolf's new book, hosted at the house where Hegel was born.</p>
-    <dl class="facts">
-      <div><dt>Date</dt><dd>Saturday, 4 July 2026</dd></div>
-      <div><dt>Venue</dt><dd>Hegel-Haus, Stuttgart</dd></div>
-      <div><dt>Organisers</dt><dd>G. Infantino & A. Vieyra</dd></div>
+    <div class="sidemark" aria-hidden="true">Author · Meets · Critics</div>
+
+    <div class="eyebrow reveal reveal-1">A Workshop · 4 July 2026</div>
+
+    <h1 class="reveal reveal-2">
+      Hegel's<br>
+      <em>Inversion</em><br>
+      of Philosophy
+    </h1>
+
+    <p class="lede reveal reveal-3">
+      A day of close reading and open discussion around
+      W. Clark Wolf's new book, hosted at the house where
+      Hegel was born.
+    </p>
+
+    <dl class="facts reveal reveal-4">
+      <div>
+        <dt>Date</dt>
+        <dd>Saturday, 4 July 2026</dd>
+      </div>
+      <div>
+        <dt>Venue</dt>
+        <dd>Hegel-Haus, Stuttgart</dd>
+      </div>
+      <div>
+        <dt>Format</dt>
+        <dd>Author meets critics</dd>
+      </div>
+      <div>
+        <dt>Organisers</dt>
+        <dd><span style="white-space: nowrap;">G. Infantino</span> &amp; <span style="white-space: nowrap;">A. Vieyra</span><br><span style="font-family: var(--serif-body); font-style: italic; font-size: 1rem; color: var(--muted);">Universität Stuttgart</span></dd>
+      </div>
     </dl>
   </section>
 
@@ -184,16 +752,58 @@
       <div class="label">§ 01 · The Book</div>
       <h2>The Metaphysics of the <em>Made</em>.</h2>
     </div>
+
     <div class="about-grid">
-      <aside class="book-plate">
-        <div class="cover"><img src="cover.jpg" alt="Book Cover"></div>
+      <aside class="book-plate" aria-label="Book">
+        <figure class="cover-figure">
+          <div class="cover">
+            <img
+              src="https://assets.cambridge.org/97810096/21458/large_cover/9781009621458i.jpg"
+              alt="Cover of Hegel's Inversion of Philosophy: The Metaphysics of the Made by W. Clark Wolf (Cambridge University Press, 2026)"
+              loading="lazy"
+              onerror="this.closest('.cover').classList.add('cover-fallback'); this.remove();"
+            >
+          </div>
+          <figcaption class="cover-caption">
+            Cover art: <em>Deconstructed Sphere</em> (2005, acrylic) © Lincoln Seligman / Bridgeman Images.
+          </figcaption>
+        </figure>
         <dl class="bookmeta">
-          <dt>Author</dt><dd>W. Clark Wolf</dd>
-          <dt>Publisher</dt><dd>CUP, 2026</dd>
+          <dt>Title</dt><dd>Hegel's Inversion of Philosophy<br><span>The Metaphysics of the Made</span></dd>
+          <dt>Author</dt><dd>W. Clark Wolf<br><span>St. John's College, Annapolis</span></dd>
+          <dt>Publisher</dt><dd>Cambridge University Press, 2026</dd>
+          <dt>ISBN</dt><dd>978-1-009-62145-8</dd>
         </dl>
       </aside>
+
       <div class="prose">
-        <p>Wolf argues that Hegel's mature project is an <em>inversion</em> of the philosophical tradition. In the Science of Logic, Hegel works out the metaphysical basis for a philosophy where the paradigm of knowledge is thought's knowledge of its own products. Geist, not nature, sets the standard.</p>
+        <p>
+          The philosophical tradition tends to take <em>nature</em> as the measure of
+          the real: what is objectively knowable is what is mind-independent, and
+          the humanly made — language, law, institutions, art — is demoted to the
+          margins of serious metaphysics. Wolf argues that Hegel's mature project
+          is an <em>inversion</em> of exactly this ordering. In the <em>Science of
+          Logic</em>, and more specifically in the Doctrine of the Concept, Hegel
+          works out the metaphysical basis for a philosophy in which the paradigm
+          of knowledge is not the mind's grasp of a given nature, but thought's
+          knowledge of its own products. Geist, not nature, sets the standard.
+        </p>
+
+        <p class="pullquote">
+          A Hegel whose core concerns diverge sharply from those of the tradition —
+          a Hegel who puts the human, made world front and center.
+          <span class="cite">— Sebastian Rand, Georgia State University</span>
+        </p>
+
+        <p>
+          The workshop takes up the book's central claims on several fronts:
+          the status of Hegel's <em>Logic</em> as a replacement of metaphysics
+          rather than another metaphysical theory; the reach and limits of the
+          artifactual paradigm across Hegel's system; and its bearing on
+          contemporary debates in German Idealism and the philosophy of concepts.
+          Each session pairs a short intervention with an extended, open
+          discussion.
+        </p>
       </div>
     </div>
   </section>
@@ -203,12 +813,93 @@
       <div class="label">§ 02 · Programme</div>
       <h2>A day in <em>six</em> replies.</h2>
     </div>
+
     <div class="schedule">
-      <div class="slot opener"><div class="time">09:30</div><div class="what">Welcome</div><div class="tag">Intro</div></div>
-      <div class="slot"><div class="time">09:35</div><div class="what">Opening remarks</div><div class="tag">W. Clark Wolf</div></div>
-      <div class="slot"><div class="time">09:50</div><div class="what">First reply & discussion</div><div class="tag">Session I</div></div>
-      <div class="slot"><div class="time">11:50</div><div class="what">Third reply & discussion</div><div class="tag">Session III</div></div>
-      <div class="slot opener"><div class="time">17:35</div><div class="what">Close · Dinner to follow</div><div class="tag">End</div></div>
+
+      <div class="slot opener">
+        <div class="time">09:30</div>
+        <div class="what">Welcome</div>
+        <div class="tag"></div>
+      </div>
+
+      <div class="slot">
+        <div class="time">09:35 — 09:50</div>
+        <div class="what">Opening remarks · <em>Hegel's Inversion of Philosophy</em></div>
+        <div class="tag">W. Clark Wolf</div>
+      </div>
+
+      <div class="slot">
+        <div class="time">09:50 — 10:40</div>
+        <div class="what">First reply &amp; discussion</div>
+        <div class="tag">Session I</div>
+      </div>
+
+      <div class="slot interstitial">
+        <div class="time">10:40</div>
+        <div class="what">Coffee</div>
+        <div class="tag"></div>
+      </div>
+
+      <div class="slot">
+        <div class="time">10:50 — 11:40</div>
+        <div class="what">Second reply &amp; discussion</div>
+        <div class="tag">Session II</div>
+      </div>
+
+      <div class="slot interstitial">
+        <div class="time">11:40</div>
+        <div class="what">Break</div>
+        <div class="tag"></div>
+      </div>
+
+      <div class="slot">
+        <div class="time">11:50 — 12:40</div>
+        <div class="what">Third reply &amp; discussion</div>
+        <div class="tag">Session III</div>
+      </div>
+
+      <div class="slot interstitial">
+        <div class="time">12:40 — 14:45</div>
+        <div class="what">Lunch</div>
+        <div class="tag"></div>
+      </div>
+
+      <div class="slot">
+        <div class="time">14:45 — 15:35</div>
+        <div class="what">Fourth reply &amp; discussion</div>
+        <div class="tag">Session IV</div>
+      </div>
+
+      <div class="slot interstitial">
+        <div class="time">15:35</div>
+        <div class="what">Break</div>
+        <div class="tag"></div>
+      </div>
+
+      <div class="slot">
+        <div class="time">15:45 — 16:35</div>
+        <div class="what">Fifth reply &amp; discussion</div>
+        <div class="tag">Session V</div>
+      </div>
+
+      <div class="slot interstitial">
+        <div class="time">16:35</div>
+        <div class="what">Break</div>
+        <div class="tag"></div>
+      </div>
+
+      <div class="slot">
+        <div class="time">16:45 — 17:35</div>
+        <div class="what">Final reply &amp; discussion</div>
+        <div class="tag">Session VI</div>
+      </div>
+
+      <div class="slot opener">
+        <div class="time">17:35</div>
+        <div class="what">Close · dinner to follow in Stuttgart</div>
+        <div class="tag"></div>
+      </div>
+
     </div>
   </section>
 
@@ -217,40 +908,119 @@
       <div class="label">§ 03 · Participants</div>
       <h2>Six critics, <em>one</em> author.</h2>
     </div>
+
     <div class="speakers">
       <div class="speaker author">
+        <span class="num">— Author</span>
         <div class="name">W. Clark Wolf</div>
         <div class="affiliation">St. John's College, Annapolis</div>
+        <div class="role">Hegel's Inversion of Philosophy</div>
       </div>
-      <div class="speaker"><div class="name">James Kreines</div><div class="affiliation">Claremont McKenna</div></div>
-      <div class="speaker"><div class="name">Andrew Werner</div><div class="affiliation">University of Houston</div></div>
-      <div class="speaker"><div class="name">Robb Dunphy</div><div class="affiliation">University of Sussex</div></div>
-      <div class="speaker"><div class="name">Daniel LeBlanc</div><div class="affiliation">Yale University</div></div>
-      <div class="speaker"><div class="name">Giuliano Infantino</div><div class="affiliation">Universität Stuttgart</div></div>
-      <div class="speaker"><div class="name">Ana Vieyra</div><div class="affiliation">Universität Stuttgart</div></div>
+      <div class="speaker">
+        <span class="num">i.</span>
+        <div class="name">James Kreines</div>
+        <div class="affiliation">Claremont McKenna College</div>
+        <div class="role">Respondent</div>
+      </div>
+      <div class="speaker">
+        <span class="num">ii.</span>
+        <div class="name">Andrew Werner</div>
+        <div class="affiliation">University of Houston</div>
+        <div class="role">Respondent</div>
+      </div>
+      <div class="speaker">
+        <span class="num">iii.</span>
+        <div class="name">Robb Dunphy</div>
+        <div class="affiliation">University of Sussex</div>
+        <div class="role">Respondent</div>
+      </div>
+      <div class="speaker">
+        <span class="num">iv.</span>
+        <div class="name">Daniel LeBlanc</div>
+        <div class="affiliation">Yale University</div>
+        <div class="role">Respondent</div>
+      </div>
+      <div class="speaker">
+        <span class="num">v.</span>
+        <div class="name">Giuliano Infantino</div>
+        <div class="affiliation">University of Stuttgart</div>
+        <div class="role">Respondent &amp; Organiser</div>
+      </div>
+      <div class="speaker">
+        <span class="num">vi.</span>
+        <div class="name">Ana Vieyra</div>
+        <div class="affiliation">University of Stuttgart</div>
+        <div class="role">Respondent &amp; Organiser</div>
+      </div>
     </div>
   </section>
 
-  <section id="contact" class="contact">
-    <p style="font-family: var(--serif-display); font-style: italic; font-size: 1.8rem; margin-bottom: 2rem;">For enquiries, please write to the organisers.</p>
-    <a class="mail" href="mailto:giuliano.infantino@philo.uni-stuttgart.de">giuliano.infantino[at]philo.uni-stuttgart.de</a>
+  <section id="venue">
+    <div class="section-head">
+      <div class="label">§ 04 · Venue</div>
+      <h2>Held in the house where <em>Hegel</em> was born.</h2>
+    </div>
+
+    <div class="venue-grid">
+      <div class="description">
+        <p>
+          The Hegel-Haus, in the old town of Stuttgart, is the birthplace of
+          Georg Wilhelm Friedrich Hegel (1770–1831) and today serves as a small
+          museum and seat of Hegelian scholarship in the city. Its rooms preserve
+          documents, editions, and traces of the philosopher's early life and
+          later reception.
+        </p>
+        <p>
+          The building is about ten minutes on foot from Stuttgart Hauptbahnhof.
+          The workshop is open to all and conducted in English; no registration
+          is required, though seating is limited by the dimensions of the room.
+        </p>
+      </div>
+
+      <div class="venue-card">
+        <h3>Hegel-Haus</h3>
+        <address>
+          Eberhardstraße 53<br>
+          70173 Stuttgart<br>
+          Germany
+        </address>
+        <a href="https://www.stuttgart.de/leben/freizeit/museen/hegel-haus.php" target="_blank" rel="noopener">Museum info →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <p>
+      For attendance enquiries and all other correspondence,
+      please write to the organisers.
+    </p>
+    <div class="organisers">
+      <div class="org">
+        <div class="org-name">Giuliano Infantino</div>
+        <a class="mail" href="mailto:giuliano.infantino@philo.uni-stuttgart.de">giuliano.infantino[at]philo.uni-stuttgart.de</a>
+      </div>
+      <div class="org">
+        <div class="org-name">Ana Vieyra</div>
+        <a class="mail" href="mailto:ana.vieyra@philo.uni-stuttgart.de">ana.vieyra[at]philo.uni-stuttgart.de</a>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <span>Universität Stuttgart · Hegel-Haus Stuttgart · MMXXVI</span>
-    <div class="legal-links">
-      <a href="#impressum">Impressum</a>
-      <a href="#impressum">Privacy Policy</a>
-    </div>
+    <span>Universität Stuttgart · in collaboration with Hegel-Haus Stuttgart</span>
+    <span>MMXXVI</span>
+    <a href="#impressum" class="impressum-link">Impressum</a>
   </footer>
 
-  <div id="impressum" class="shell">
-    <p><strong>Impressum (Legal Notice)</strong></p>
-    <p>Angaben gemäß § 5 TMG:<br>
-    Universität Stuttgart · Institut für Philosophie<br>
-    Seidenstraße 36, 70174 Stuttgart<br>
-    Represented by: Giuliano Infantino & Ana Vieyra</p>
-  </div>
+  <section id="impressum">
+    <div class="shell">
+      <p><strong>Legal Notice / Impressum</strong></p>
+      <p>University of Stuttgart · Institute of Philosophy · Seidenstraße 36 · 70174 Stuttgart</p>
+      <p>Organisers: Giuliano Infantino & Ana Vieyra</p>
+      <p>Contact: giuliano.infantino[at]philo.uni-stuttgart.de</p>
+    </div>
+  </section>
+
 </div>
 
 </body>
